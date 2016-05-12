@@ -10,11 +10,12 @@ export class NotifyService {
     public static timeout: number = 3000;
 
     public static addNotify(notify: NotifyInterface) {
+        let timeout = (notify.timeout) ? notify.timeout : this.timeout;
         notify.active = true;
         NotifyService._notify.push(notify);
         setTimeout(() => {
             notify.active = false;
-        }, notify.timeout ? notify.timeout : this.timeout);
+        }, timeout);
     }
 
     public static addPendingNotify(notify: NotifyInterface) {
@@ -29,16 +30,6 @@ export class NotifyService {
         NotifyService._pendingNotify = [];
 
         return NotifyService._notify
-    }
-
-    public static removeAllNotify() {
-        NotifyService._notify = [];
-    }
-
-    public static disableAllNotify() {
-        NotifyService._notify.forEach(n => {
-            n.active = false;
-        })
     }
 
     public static clearNotify() {
