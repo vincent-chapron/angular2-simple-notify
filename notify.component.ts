@@ -2,7 +2,7 @@ import {Component, OnInit, Input, Output} from 'angular2/core'
 import {Router} from 'angular2/router'
 
 import {NotifyService} from "./notify.service";
-import {Notify} from "./notify";
+import {NotifyInterface} from "./notify.interface";
 
 @Component({
     selector: 'notify',
@@ -29,7 +29,7 @@ import {Notify} from "./notify";
 export class NotifyComponent implements OnInit {
     constructor(private _router: Router) {}
 
-    notify: Notify[];
+    notify: NotifyInterface[];
     @Input() timeout: number = 3000;
 
     ngOnInit() {

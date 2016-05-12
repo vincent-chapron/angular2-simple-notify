@@ -1,4 +1,4 @@
-export interface Notify {
+export interface NotifyInterface {
     name: string
     content: string
     active?: boolean
