@@ -1,6 +1,6 @@
 import {Injectable} from 'angular2/core'
 
-import {NotifyInterface} from "./notify.interface";
+import {NotifyInterface} from "./notifyInterface";
 
 @Injectable()
 export class NotifyService {

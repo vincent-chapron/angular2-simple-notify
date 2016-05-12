@@ -1,8 +1,8 @@
 import {Component, OnInit, Input, Output} from 'angular2/core'
 import {Router} from 'angular2/router'
 
-import {NotifyService} from "./notify.service";
-import {NotifyInterface} from "./notify.interface";
+import {NotifyService} from "./notifyService";
+import {NotifyInterface} from "./notifyInterface";
 
 @Component({
     selector: 'notify',
