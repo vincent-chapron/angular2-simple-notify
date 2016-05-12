@@ -1,5 +1,5 @@
 {
-  "name": "angular2-notifications",
+  "name": "angular2-simple-notify",
   "version": "0.1.0",
   "description": "Small component for notifications in angular 2",
   "scripts": {
@@ -22,3 +22,4 @@
   },
   "homepage": "https://github.com/vincent-chapron/angular2-notifications#readme"
 }
+
