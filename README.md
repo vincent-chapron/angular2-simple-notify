@@ -22,7 +22,7 @@ don't forget to add systemjs config
 ```ts
 import {Component} from 'angular2/core';
 //...
-import {NotifyComponent} from "angular2-simple-notify/NotifyComponent";
+import {NotifyComponent} from "angular2-simple-notify/notifyComponent";
 import {NotifyService} from "./shared/notify/notifyService";
 
 @Component({
