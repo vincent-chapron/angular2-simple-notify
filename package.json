@@ -1,0 +1,24 @@
+{
+  "name": "angular2-notifications",
+  "version": "0.1.0",
+  "description": "Small component for notifications in angular 2",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincent-chapron/angular2-notifications.git"
+  },
+  "keywords": [
+    "angular",
+    "2",
+    "notifications",
+    "notify"
+  ],
+  "author": "vincent chapron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vincent-chapron/angular2-notifications/issues"
+  },
+  "homepage": "https://github.com/vincent-chapron/angular2-notifications#readme"
+}
