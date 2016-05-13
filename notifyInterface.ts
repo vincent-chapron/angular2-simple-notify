@@ -3,4 +3,5 @@ export interface NotifyInterface {
     content: string
     active?: boolean
     timeout?: number
+    type?: string
 }

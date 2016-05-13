@@ -12,7 +12,7 @@ import {NotifyInterface} from "./notifyInterface";
         *ngFor="#n of notify"
         [hidden]="!n.active"
         [innerHtml]="n.content"
-        class="alert alert-dismissible alert-success">
+        class="alert alert-dismissible alert-{{n.type || type}}">
     </div>
 </div>
 `
@@ -22,6 +22,7 @@ export class NotifyComponent implements OnInit {
 
     @Input() timeout: number = 3000;
     @Input() position: string = "top right";
+    @Input() type: string = "success";
 
     notify: NotifyInterface[];
 

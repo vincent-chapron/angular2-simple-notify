@@ -36,7 +36,8 @@ import {NotifyService} from "./shared/notify/notifyService";
 })
 export class AppComponent {
     onClick() {
-        NotifyService.addNotify({name: "Notify", content:"This is a notification."})
+        NotifyService.addNotify({name: "Notify", content:"This is a notification.", type: "danger"});
+        NotifyService.addNotify({name: "Notify", content:"This is another <b>notification</b>.", timeout:1500});
     }
 }
 ```
@@ -56,6 +57,7 @@ You can add an instant notification with `NotifyService.addNotify()`
     content: string
     active?: boolean
     timeout?: number
+    type?: string
 }
 ```
 
@@ -64,12 +66,14 @@ You can add an instant notification with `NotifyService.addNotify()`
 ```
 <notify
         [position]="position"
-        [timeout]="timeout">
+        [timeout]="timeout"
+        [type]="type">
 </notify>
 ```
 
 - **position**: *string* This is the position of the notification. Default value is `"top right"`.
-- **timeout**: *number* This is the life time of notification. Default value is `3000`.
+- **timeout**: *number* This is the life time of the notification. Default value is `3000`.
+- **type**: *string* This is the default type of the notification. Default value is `"success"`. Remember each notification has is own property `type`.
 
 ##### NotifyService
 
