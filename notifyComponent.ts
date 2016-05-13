@@ -11,31 +11,19 @@ import {NotifyInterface} from "./notifyInterface";
     <div
         *ngFor="#n of notify"
         [hidden]="!n.active"
+        [innerHtml]="n.content"
         class="alert alert-dismissible alert-success">
-        {{n?.content}}
     </div>
 </div>
-`,
-    styles: [`
-.notify-container {
-    position: fixed;
-    width: 400px;
-    max-width: 100vw;
-    z-index: 5100;
-}
-
-.top-right, .right-top {top: 0; right: 0;}
-.top-left, .left-top {top: 0; left: 0;}
-.bottom-right, .right-bottom {bottom: 0; right: 0;}
-.bottom-left, .left-bottom {bottom: 0; left: 0;}
-`]
+`
 })
 export class NotifyComponent implements OnInit {
-    constructor(private _router: Router) {}
+    constructor(protected _router: Router) {}
 
-    notify: NotifyInterface[];
     @Input() timeout: number = 3000;
     @Input() position: string = "top right";
+
+    notify: NotifyInterface[];
 
     ngOnInit() {
         this._router.subscribe(() => this._getNotify());
@@ -43,12 +31,25 @@ export class NotifyComponent implements OnInit {
         this._getNotify();
     }
 
-    private _getPosition() {
+    protected _getPosition() {
         return this.position.replace(' ', '-');
     }
 
-    private _getNotify() {
+    protected _getNotify() {
         NotifyService.clearNotify();
         this.notify = NotifyService.getAllNotify();
     }
+
+    protected _getStyle() {
+        return {
+            top:            (/^top|top$/.test(this.position)) ? '0' : '',
+            bottom:         (/^bottom|bottom$/.test(this.position)) ? '0' : '',
+            right:          (/^right|right$/.test(this.position)) ? '0' : '',
+            left:           (/^left|left$/.test(this.position)) ? '0' : '',
+            position:       'fixed',
+            width:          '400px',
+            'max-width':    '100vw',
+            'z-index':      '5100',
+        };
+    };
 }
