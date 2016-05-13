@@ -75,3 +75,34 @@ You can add an instant notification with `NotifyService.addNotify()`
 
 - **addNotify(notify: NotifyInterface): void**: Add instant notification.
 - **addPendingNotify(notify: NotifyInterface): void**: Add notification but will be displayed after route changes.
+
+##### Extends
+
+Extends the NotifyComponent to use your own template.
+
+Here is the minimal code before overriding the template.
+
+```ts
+import {Component} from 'angular2/core';
+import {NotifyComponent} from "angular2-simple-notify/notifyComponent";
+
+@Component({
+    selector: 'my-notify',
+    template: `
+<div [ngStyle]="_getStyle()">
+    <div
+        *ngFor="#n of notify"
+        [hidden]="!n.active"
+        [innerHtml]="n.content">
+    </div>
+</div>
+`
+})
+export class TestComponent extends NotifyComponent {
+    constructor(protected _router: Router) {
+        super(this._router);
+    }
+}
+```
+
+Now you just need to call `<my-notify></my-notify>`
