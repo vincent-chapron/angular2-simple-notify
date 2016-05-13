@@ -7,7 +7,7 @@ import {NotifyInterface} from "./notifyInterface";
 @Component({
     selector: 'notify',
     template: `
-<div [class]="'notify-container ' + _getPosition()">
+<div [ngStyle]="_getStyle()">
     <div
         *ngFor="#n of notify"
         [hidden]="!n.active"
@@ -29,10 +29,6 @@ export class NotifyComponent implements OnInit {
         this._router.subscribe(() => this._getNotify());
         NotifyService.timeout = this.timeout;
         this._getNotify();
-    }
-
-    protected _getPosition() {
-        return this.position.replace(' ', '-');
     }
 
     protected _getNotify() {
