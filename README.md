@@ -19,11 +19,23 @@ don't forget to add systemjs config
 
 ### Getting Started
 
+`boot.ts` or `main.ts`
+
+```
+// ...
+import { ROUTER_PROVIDERS } from '@angular/router'
+
+// ...
+bootstrap(AppComponent, [ROUTER_PROVIDERS]);
+``` 
+
+`app.component.ts`
+
 ```ts
 import {Component} from 'angular2/core';
 //...
 import {NotifyComponent} from "angular2-simple-notify/notifyComponent";
-import {NotifyService} from "./shared/notify/notifyService";
+import {NotifyService} from "angular2-simple-notify/notifyService";
 
 @Component({
     selector: 'app',

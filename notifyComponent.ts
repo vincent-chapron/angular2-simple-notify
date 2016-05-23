@@ -1,5 +1,5 @@
-import {Component, OnInit, Input, Output} from 'angular2/core'
-import {Router} from 'angular2/router'
+import {Component, OnInit, Input, Output} from '@angular/core'
+import {Router} from '@angular/router'
 
 import {NotifyService} from "./notifyService";
 import {NotifyInterface} from "./notifyInterface";
@@ -9,7 +9,7 @@ import {NotifyInterface} from "./notifyInterface";
     template: `
 <div [ngStyle]="_getStyle()">
     <div
-        *ngFor="#n of notify"
+        *ngFor="let n of notify"
         [hidden]="!n.active"
         [innerHtml]="n.content"
         class="alert alert-dismissible alert-{{n.type || type}}">
@@ -27,7 +27,7 @@ export class NotifyComponent implements OnInit {
     notify: NotifyInterface[];
 
     ngOnInit() {
-        this._router.subscribe(() => this._getNotify());
+        this._router.changes.subscribe(() => this._getNotify());
         NotifyService.timeout = this.timeout;
         this._getNotify();
     }
