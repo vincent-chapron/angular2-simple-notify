@@ -1,11 +1,11 @@
 {
   "name": "angular2-simple-notify",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Small component for notifications in angular 2",
   "scripts": {
     "compile": "tsc",
     "install:typings": "typings install",
-    "prepublish": "npm install && npm run install:typings && ./node_modules/.bin/tsc"
+    "prepublish": "npm run install:typings && ./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",

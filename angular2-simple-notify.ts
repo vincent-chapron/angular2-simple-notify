@@ -1,4 +1,4 @@
-export * from './notifyComponent.ts';
-export * from './notifyService.ts';
-export * from './notifyInterface.ts';
+export * from './notifyComponent';
+export * from './notifyService';
+export * from './notifyInterface';
 
