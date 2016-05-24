@@ -6,15 +6,37 @@
 npm install --save angular2-simple-notify
 ```
 
-don't forget to add systemjs config
+don't forget to add systemjs config (in this case, i'm using angular-cli structure)
 
-```js
+```ts
+// src/system-config.ts
 //...
-    map: {
-        //...
-        'angular2-simple-notify': 'node_modules/angular2-simple-notify'
-    }
+/** Map relative paths to URLs. */
+const map: any = {
+    'angular2-simple-notify': 'vendor/angular2-simple-notify'
+};
+
+/** User packages configuration. */
+const packages: any = {
+    'angular2-simple-notify': {defaultExtension: 'js'}
+};
 //...
+```
+
+and ...
+
+```
+// angular-cli-build.js
+//...
+
+module.exports = function(defaults) {
+    return new Angular2App(defaults, {
+        vendorNpmFiles: [
+            // ...
+            'angular2-simple-notify/**/*.js'
+        ]
+    });
+};
 ```
 
 ### Getting Started
@@ -34,8 +56,7 @@ bootstrap(AppComponent, [ROUTER_PROVIDERS]);
 ```ts
 import {Component} from 'angular2/core';
 //...
-import {NotifyComponent} from "angular2-simple-notify/notifyComponent";
-import {NotifyService} from "angular2-simple-notify/notifyService";
+import {NotifyComponent, NotifyService} from "angular2-simple-notify/angular2-simple-notify";
 
 @Component({
     selector: 'app',
@@ -100,7 +121,7 @@ Here is the minimal code before overriding the template.
 
 ```ts
 import {Component} from 'angular2/core';
-import {NotifyComponent} from "angular2-simple-notify/notifyComponent";
+import {NotifyComponent} from "angular2-simple-notify/angular2-simple-notify";
 
 @Component({
     selector: 'my-notify',
@@ -122,3 +143,4 @@ export class TestComponent extends NotifyComponent {
 ```
 
 Now you just need to call `<my-notify></my-notify>`
+
