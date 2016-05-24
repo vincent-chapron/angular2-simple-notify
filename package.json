@@ -1,9 +1,10 @@
 {
   "name": "angular2-simple-notify",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Small component for notifications in angular 2",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc",
+    "install:typings": "typings install"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,27 @@
     "url": "https://github.com/vincent-chapron/angular2-simple-notify/issues"
   },
   "homepage": "https://github.com/vincent-chapron/angular2-simple-notify#readme",
-  "dependencies": {
-    "@angular/core": "2.0.0-rc.1",
-    "@angular/router": "2.0.0-rc.1"
+  "main": "ng2-page-scroll.js",
+  "typings": "ng2-page-scroll.d.ts",
+  "peerDependencies": {
+    "@angular/core": "~2.0.0-rc.1",
+    "@angular/common": "~2.0.0-rc.1",
+    "@angular/compiler": "~2.0.0-rc.1",
+    "@angular/platform-browser": "~2.0.0-rc.1",
+    "@angular/router": "~2.0.0-rc.1",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "~0.6.12"
+  },
+  "devDependencies": {
+    "@angular/core": "~2.0.0-rc.1",
+    "@angular/common": "~2.0.0-rc.1",
+    "@angular/compiler": "~2.0.0-rc.1",
+    "@angular/platform-browser": "~2.0.0-rc.1",
+    "@angular/router": "~2.0.0-rc.1",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs-builder": "^0.15.0",
+    "typescript": "1.8.9",
+    "typings": "0.7.9",
+    "zone.js": "~0.6.12"
   }
 }

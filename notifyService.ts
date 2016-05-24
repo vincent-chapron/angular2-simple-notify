@@ -33,7 +33,7 @@ export class NotifyService {
     }
 
     public static clearNotify() {
-        let notifyIndex = [];
+        let notifyIndex:any[] = [];
 
         NotifyService._notify.forEach((n, i) => {
             if (!n.active)
